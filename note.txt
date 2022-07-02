@@ -1,0 +1,18 @@
+from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
+<script>
+    var pages = {
+      'home' : `Welcome to Comic Relief. This is our homepage.` //,
+      // 'aboutus' : ...,
+      // 'services': ...,
+      // 'contact': ...
+    };
+
+    function getPageContent(page) {
+      var contentToReturn;
+
+      switch(page){
+        //...
+      }
+
+    }
+    </script>
