@@ -23,10 +23,12 @@ function renderJoke(joke) {
 
   // console.log(joke.category);
 
-  const jokeText = document.createElement('p');
-  jokeText.innerText = "Lorem ipsum dolor sit amet";
-  console.log(jokeText);
+  const jokeSetup = document.createElement('p');
+  jokeSetup.innerText = joke.setup;
+  console.log(jokeSetup);
    
+  const jokeDelivery = document.createElement('p')
+  jokeDelivery.innerText = joke.delivery;
   // joke.setup
   // joke. delivery
 
@@ -40,7 +42,7 @@ function renderJoke(joke) {
   likeBtn.addEventListener('click', event => addLike(event, joke));
 
   // append elements to card
-  card.append(category, jokeText, likes, likeBtn);
+  card.append(category, jokeSetup, jokeDelivery, likes, likeBtn);
   // append card to DOM
   jokeCollection.append(card);
 }
