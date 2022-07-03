@@ -17,32 +17,33 @@ function renderJoke(joke) {
   // Create card
   const card = document.createElement('div');
   card.className = 'card';
+
   // Create inner card elements
   const category = document.createElement('h3');
   category.innerText = joke.category;
-
   // console.log(joke.category);
 
   const jokeSetup = document.createElement('p');
   jokeSetup.innerText = joke.setup;
   console.log(jokeSetup);
    
-  const jokeDelivery = document.createElement('p')
+  const jokeDelivery = document.createElement('p');
   jokeDelivery.innerText = joke.delivery;
-  // joke.setup
-  // joke. delivery
+
+  const space = document.createElement('hr');
 
   const likes = document.createElement('p');
+  likes.className = 'likes';
   likes.innerText = (`${joke.likes} likes`); // FIX
-
+  
   const likeBtn = document.createElement('button');
   likeBtn.className = 'like-btn';
   likeBtn.setAttribute('id', joke.id);
-  likeBtn.innerText = 'like ❤'; // FIX
+  likeBtn.innerText = 'like ♡'; // FIX
   likeBtn.addEventListener('click', event => addLike(event, joke));
 
   // append elements to card
-  card.append(category, jokeSetup, jokeDelivery, likes, likeBtn);
+  card.append(category, jokeSetup, jokeDelivery, space, likeBtn, likes);
   // append card to DOM
   jokeCollection.append(card);
 }

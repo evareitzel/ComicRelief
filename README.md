@@ -6,6 +6,7 @@ Specs:
 CRUD - #
 Event listeners - #
 array method - #
+Git Pushes - 4
 
 References:
 - API

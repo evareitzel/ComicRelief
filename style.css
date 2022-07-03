@@ -28,20 +28,26 @@ h1 {
 .card {
   background: #eeeeee;
   display: inline-block; 
-  padding: 10px;
+  padding: 10px 20px 20px;
   margin: 20px 10px 10px 10px;
   background-color: #ffffff;
-  height: 300px;
+  /* height: 300px; */
   width: 250px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2)
 }
 
+hr {
+  margin-top:  50px;
+}
+/* .likes {} */
+
 .like-btn {
   border: 1px solid;
   color: #292929;
-  padding: 16px 24px;
+  padding: 8px 20px;
   text-align: center;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 25px;
+  float: right;
 }
