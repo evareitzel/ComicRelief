@@ -14,23 +14,19 @@ nav>ul {
   background: #eeeeee;
   display: inline-block; 
   padding: 10px;
-  margin: 0 20px 20px 0;
+  margin: 20px 10px 10px 10px;
   background-color: #ffffff;
   height: 300px;
   width: 250px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2)
-  animation: 
+}
 
-/*  duration: 1s
-    delay: 0.8s
-    fill-mode: both
-
-@keyframes miniCard
-  0%
-    transform: scale(0)
-  50%
-    transform: scale(1.05)
-  100%
-    transform: scale(1) */
+.like-btn {
+  border: 1px solid;
+  color: #292929;
+  padding: 16px 24px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 30px;
 }

@@ -35,10 +35,15 @@ jokeText.innerText = "Lorem ipsum dolor sit amet";
       // joke. delivery
 
 const likes = document.createElement('p');
-likes.innerText = (`${joke.likes} likes`);
+likes.innerText = (`${joke.likes} likes`); // FIX
 
-// const likeBtn = document.createElement('button');
-// likeBtn.className = 'like-btn';
+const likeBtn = document.createElement('button');
+likeBtn.className = 'like-btn';
+likeBtn.setAttribute('id', joke.id);
+likeBtn.innerText = 'like ❤'; // FIX
+likeBtn.addEventListener('click', event => addLike(event, joke));
+
+// ♡ ♥
 
 // joke.flags
   // if flags.value === true 
@@ -47,7 +52,7 @@ likes.innerText = (`${joke.likes} likes`);
     // display "no flags"
 
 // append elements to card
-card.append(category, jokeText, likes); // likeBtn, flags, fix jokeText
+card.append(category, jokeText, likes, likeBtn); // flags, *jokeText
 // append card to DOM
 jokeCollection.append(card);
 }
@@ -61,5 +66,23 @@ jokeCollection.append(card);
   // append card to dom
 
 
-  // Increase likes
-    // function with fetch
+  // Increase a joke's likes
+    function addLike(event, joke) {
+      const more = parseInt(joke.likes = 0) + 1;
+      fetch(`http://localhost:3000/jokes/${joke.id}`, {
+        method: 'PATCH',
+        headers: {
+          "Content-type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          "name":  joke.name,
+          "image": joke.image,
+          "likes": more
+        })
+      })
+      .then(data => data.json())
+      //.then(response => console.log(response))
+      .then(response => {
+        event.target.previousElementSibling.innerText = `${more} likes`})
+    }

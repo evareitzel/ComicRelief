@@ -25,3 +25,6 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
     // 20220702192114
 
     // option: flags sidebar (~ fun police) 
+
+    // card css --> 
+    // https://codepen.io/kolpak/pen/ezoGWy (via )
