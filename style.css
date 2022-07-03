@@ -2,12 +2,27 @@ body {
   font-family: 'Gill sans', sans-serif;
 }
 
+#hero {
+  background: #eee;
+  height: 100%
+}
+
+#hero-img {
+  width:100%
+/* get text to float over img */
+}
+
 nav>ul {
   list-style: none;
+  /* get links floating and aligned properly */
 }
 
 .nav_link {
-  text-decoration: none;
+  text-decoration: none
+}
+
+h1 {
+  font-weight: 900
 }
 
 .card {

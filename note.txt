@@ -28,3 +28,11 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
 
     // card css --> 
     // https://codepen.io/kolpak/pen/ezoGWy (via )
+
+  // ♡ ♥
+
+  // joke.flags
+  // if flags.value === true 
+  // display flag
+  // else 
+  // display "no flags"
