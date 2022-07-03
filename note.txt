@@ -16,3 +16,12 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
 
     }
     </script>
+
+// https://v2.jokeapi.dev/joke/Any?safe-mode
+    // 20220702191522
+    // 20220702191553
+    // 20220702191904
+    // 20220702192033
+    // 20220702192114
+
+    // option: flags sidebar (~ fun police) 

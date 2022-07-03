@@ -1,0 +1,92 @@
+{
+  "jokes": [
+    {
+      "error": false,
+      "category": "Pun",
+      "type": "single",
+      "joke": "A horse walks into a bar.\n\"Hey\", the Bartender says.\n\"Sure\", the horse replies.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 74,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "error": false,
+      "category": "Pun",
+      "type": "twopart",
+      "setup": "Two guys walked into a bar.",
+      "delivery": "The third guy ducked.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 168,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "error": false,
+      "category": "Programming",
+      "type": "single",
+      "joke": "Have a great weekend!\nI hope your code behaves the same on Monday as it did on Friday.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "id": 44,
+      "safe": true,
+      "lang": "en"
+    },
+    {
+      "error": false,
+      "category": "Programming",
+      "type": "twopart",
+      "setup": "Why are Assembly programmers always soaking wet?",
+      "delivery": "They work below C-level.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "safe": true,
+      "id": 264,
+      "lang": "en"
+    },
+    {
+      "error": false,
+      "category": "Pun",
+      "type": "twopart",
+      "setup": "I can't believe I got fired from the calendar factory.",
+      "delivery": "All I did was take a day off.",
+      "flags": {
+        "nsfw": false,
+        "religious": false,
+        "political": false,
+        "racist": false,
+        "sexist": false,
+        "explicit": false
+      },
+      "safe": true,
+      "id": 303,
+      "lang": "en"
+    }
+  ]
+}

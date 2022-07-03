@@ -1,0 +1,36 @@
+body {
+  font-family: 'Gill sans', sans-serif;
+}
+
+nav>ul {
+  list-style: none;
+}
+
+.nav_link {
+  text-decoration: none;
+}
+
+.card {
+  background: #eeeeee;
+  display: inline-block; 
+  padding: 10px;
+  margin: 0 20px 20px 0;
+  background-color: #ffffff;
+  height: 300px;
+  width: 250px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2)
+  animation: 
+
+/*  duration: 1s
+    delay: 0.8s
+    fill-mode: both
+
+@keyframes miniCard
+  0%
+    transform: scale(0)
+  50%
+    transform: scale(1.05)
+  100%
+    transform: scale(1) */
+}
