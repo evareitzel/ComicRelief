@@ -33,7 +33,8 @@
       },
       "id": 145,
       "safe": false,
-      "lang": "en"
+      "lang": "en",
+      "likes": 5
     },
     {
       "category": "Programming",
@@ -50,7 +51,8 @@
       },
       "id": 234,
       "safe": true,
-      "lang": "en"
+      "lang": "en",
+      "likes": 2
     },
     {
       "category": "Pun",
@@ -67,7 +69,8 @@
       },
       "id": 148,
       "safe": true,
-      "lang": "en"
+      "lang": "en",
+      "likes": 7
     },
     {
       "category": "Pun",
@@ -84,7 +87,8 @@
       },
       "id": 196,
       "safe": true,
-      "lang": "en"
+      "lang": "en",
+      "likes": null
     },
     {
       "category": "Programming",
@@ -101,7 +105,8 @@
       },
       "id": 50,
       "safe": true,
-      "lang": "en"
+      "lang": "en",
+      "likes": 2
     },
     {
       "category": "Dark",
@@ -118,7 +123,8 @@
       },
       "id": 97,
       "safe": false,
-      "lang": "en"
+      "lang": "en",
+      "likes": null
     },
     {
       "category": "Pun",
@@ -135,7 +141,8 @@
       },
       "safe": true,
       "id": 267,
-      "lang": "en"
+      "lang": "en",
+      "likes": null
     },
     {
       "category": "Pun",
@@ -152,7 +159,8 @@
       },
       "id": 190,
       "safe": true,
-      "lang": "en"
+      "lang": "en",
+      "likes": 3
     },
     {
       "category": "Pun",
@@ -169,7 +177,8 @@
       },
       "id": 87,
       "safe": true,
-      "lang": "en"
+      "lang": "en",
+      "likes": 7
     }
   ]
 }

@@ -1,6 +1,4 @@
-// ♡ Eva's code goes here ♡
 jokeCollection = document.querySelector('#joke-collection');
-// console.log(jokeCollection);
 
 // Fetch info
 fetch('http://localhost:3000/jokes/')
@@ -9,9 +7,30 @@ fetch('http://localhost:3000/jokes/')
   .then(function (data) {
     data.forEach((joke) => {
       renderJoke(joke);
+      console.log(joke);
     })
   })
-console.log(joke);
+
+// Add likes to jokes in JSON.db
+// Increase a joke's likes
+function addLike(event, joke) {
+  // FIX: set joke.likes default value to 0 
+  const more = parseInt(joke.likes) + 1;
+  fetch(`http://localhost:3000/jokes/${joke.id}`, {
+    method: 'PATCH',
+    headers: {
+      "Content-type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      "likes": more
+    })
+  })
+    .then(data => data.json())
+    .then(response => {
+      event.target.nextElementSibling.innerText = `${more} likes`
+    })
+}
 
 function renderJoke(joke) {
   // Create card
@@ -21,29 +40,28 @@ function renderJoke(joke) {
   // Create inner card elements
   const category = document.createElement('h3');
   category.innerText = joke.category;
-  // console.log(joke.category);
 
-  const jokeSetup = document.createElement('p');
-  jokeSetup.innerText = joke.setup;
-  console.log(jokeSetup);
+  const setup = document.createElement('p');
+  setup.innerText = joke.setup;
    
-  const jokeDelivery = document.createElement('p');
-  jokeDelivery.innerText = joke.delivery;
+  const delivery = document.createElement('p');
+  delivery.innerText = joke.delivery;
 
-  const space = document.createElement('hr');
+  const space = document.createElement('br');
 
-  const likes = document.createElement('p');
-  likes.className = 'likes';
-  likes.innerText = (`${joke.likes} likes`); // FIX
-  
   const likeBtn = document.createElement('button');
   likeBtn.className = 'like-btn';
   likeBtn.setAttribute('id', joke.id);
-  likeBtn.innerText = 'like ♡'; // FIX
+  likeBtn.innerText = 'like ♡';
   likeBtn.addEventListener('click', event => addLike(event, joke));
 
+  const likes = document.createElement('p');
+  likes.className = 'likes';
+  likes.innerText = (`${joke.likes} likes`);
+
   // append elements to card
-  card.append(category, jokeSetup, jokeDelivery, space, likeBtn, likes);
+  card.append(category, setup, delivery, space, likeBtn, likes);
+
   // append card to DOM
   jokeCollection.append(card);
 }
@@ -56,25 +74,4 @@ function renderJoke(joke) {
 // append elements to card
 // append card to dom
 
-
-// Increase a joke's likes
-function addLike(event, joke) {
-  const more = parseInt(joke.likes = 0) + 1;
-  fetch(`http://localhost:3000/jokes/${joke.id}`, {
-    method: 'PATCH',
-    headers: {
-      "Content-type": "application/json",
-      Accept: "application/json"
-    },
-    body: JSON.stringify({
-      "name": joke.name,
-      "image": joke.image,
-      "likes": more
-    })
-  })
-    .then(data => data.json())
-    //.then(response => console.log(response))
-    .then(response => {
-      event.target.previousElementSibling.innerText = `${more} likes`
-    })
-}
+// Search jokes by "if this joke contains keyword"
