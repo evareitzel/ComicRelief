@@ -1,21 +1,21 @@
 jokeCollection = document.querySelector('#joke-collection');
 
 // Fetch info
+
+// GET jokes 
 fetch('http://localhost:3000/jokes/')
   .then(response => response.json())
   // .then(data => console.log(data));
   .then(function (data) {
     data.forEach((joke) => {
       renderJoke(joke);
-      console.log(joke);
+      // console.log(joke);
     })
   })
 
-// Add likes to jokes in JSON.db
-// Increase a joke's likes
+// PATCH joke likes
 function addLike(event, joke) {
-  // FIX: set joke.likes default value to 0 
-  const more = parseInt(joke.likes) + 1;
+  const more = parseInt(joke.likes++);
   fetch(`http://localhost:3000/jokes/${joke.id}`, {
     method: 'PATCH',
     headers: {
@@ -30,6 +30,7 @@ function addLike(event, joke) {
     .then(response => {
       event.target.nextElementSibling.innerText = `${more} likes`
     })
+    console.log(joke.likes);
 }
 
 function renderJoke(joke) {
@@ -65,6 +66,7 @@ function renderJoke(joke) {
   // append card to DOM
   jokeCollection.append(card);
 }
+
 
 // Add a new joke
 // form input

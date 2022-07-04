@@ -16,7 +16,7 @@
       "safe": true,
       "id": 290,
       "lang": "en",
-      "likes": 1
+      "likes": 4
     },
     {
       "category": "Misc",
@@ -34,7 +34,7 @@
       "id": 145,
       "safe": false,
       "lang": "en",
-      "likes": 5
+      "likes": 3
     },
     {
       "category": "Programming",
@@ -52,7 +52,7 @@
       "id": 234,
       "safe": true,
       "lang": "en",
-      "likes": 2
+      "likes": 1
     },
     {
       "category": "Pun",
@@ -70,7 +70,7 @@
       "id": 148,
       "safe": true,
       "lang": "en",
-      "likes": 7
+      "likes": 24
     },
     {
       "category": "Pun",
@@ -88,7 +88,7 @@
       "id": 196,
       "safe": true,
       "lang": "en",
-      "likes": null
+      "likes": 3
     },
     {
       "category": "Programming",
@@ -124,7 +124,7 @@
       "id": 97,
       "safe": false,
       "lang": "en",
-      "likes": null
+      "likes": 12
     },
     {
       "category": "Pun",
@@ -142,7 +142,7 @@
       "safe": true,
       "id": 267,
       "lang": "en",
-      "likes": null
+      "likes": 10
     },
     {
       "category": "Pun",
@@ -160,7 +160,7 @@
       "id": 190,
       "safe": true,
       "lang": "en",
-      "likes": 3
+      "likes": 1
     },
     {
       "category": "Pun",
@@ -178,7 +178,7 @@
       "id": 87,
       "safe": true,
       "lang": "en",
-      "likes": 7
+      "likes": 1
     }
   ]
 }

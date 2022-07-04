@@ -36,3 +36,18 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
   // display flag
   // else 
   // display "no flags"
+
+  // From "Building the Simple Liker App" //
+    function likeEvent (event){
+      const heart = event.target;
+      heart.addEventListener('click');
+      mimicServerCall() // 'http://mimicServer.example.com'
+      .then(function() {
+        if (heart.innerText === EMPTY_HEART){
+          heart.innerText = FULL_HEART;
+          } else {
+          heart.innerText = EMPTY_HEART;
+        }
+      }) 
+
+      
