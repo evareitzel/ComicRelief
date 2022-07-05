@@ -29,7 +29,7 @@ Event listeners - 1
 - search button - submit event listener
 -  
 array method - #
-Git Pushes - 11
+Git Pushes - 12
 
 References:
 - API

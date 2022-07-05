@@ -74,3 +74,43 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
     </li>
   </ul>
 </nav>
+
+Search feature- iterator
+? Like btn
+
+
+// Lines 52-59
+ likeBtn.className = 'like-btn';
+  likeBtn.setAttribute('id', joke.id);
+  likeBtn.innerText = 'like ♡';
+  likeBtn.addEventListener('click', event => addLike(event, joke));
+
+  const likes = document.createElement('p');
+  likes.className = 'likes';
+  likes.innerText = (`${joke.likes} likes`);
+
+  **** 3 event listeners ****
+  **** iterator**** clean, DRY code**** API
+  **** HTML
+  **** Book mtg by 7/11 45min project review
+  - code
+  - blog
+  - readme
+  - video (3min or less) - user 
+
+  Review:
+  - talk thru App
+  - show/describe code (function-driven, not line-by-line)
+    - why obj, fetch - promise - what i do with promise... update DB. / why choosing an iterator? why using? how implementing it.
+  - code challenge
+
+
++ 1-2 more event listeners (hover / show delivery option)
+-keydown/up
+look at event listeners
+
+  - submit work w/o code notes
+  - be explicit in naming (p, moreLikes, likejokes - function names, behaviors) -what it is + what it does
+  ACTION + target
+
+  submit handler jokes

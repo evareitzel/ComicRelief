@@ -1,4 +1,5 @@
 const jokesContainer = document.getElementById('jokes-container');
+let jokeArray; // make fetch data searchable
 
 //// Display jokes section
 
@@ -6,15 +7,16 @@ const jokesContainer = document.getElementById('jokes-container');
 // GET jokes 
 fetch('http://localhost:3000/jokes/')
   .then(response => response.json())
-  .then(function (data) {
-    data.forEach((joke) => {
+  .then(function (data) { 
+    jokeArray = data;
+    jokeArray.forEach((joke) => {
       renderJoke(joke);
     })
   })
 
 // PATCH joke likes
 function addLike(event, joke) {
-  const more = parseInt(joke.likes++);
+  const moreLikes = parseInt(joke.likes++);
   fetch(`http://localhost:3000/jokes/${joke.id}`, {
     method: 'PATCH',
     headers: {
@@ -22,12 +24,12 @@ function addLike(event, joke) {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      "likes": more
+      "likes": moreLikes
     })
   })
     .then(data => data.json())
-    .then(response => { // response unused?
-      event.target.nextElementSibling.innerText = `${more} likes`
+    .then(response => { // response unused? - rename updatedJoke / updatedDB
+      event.target.nextElementSibling.innerText = `${moreLikes} likes`
     })
 }
 
@@ -65,22 +67,27 @@ function renderJoke(joke) {
     jokesContainer.append(card);
 }
 
-/*
 //// Search section
-  const searchInput = document.getElementById('search');
-  // console.log(searchInput.value);
+// OPTION TO SEARCH BY CATEGORY
+// OPTION TO DISPLAY JOKES FROM SHORTEST TO LONGEST
+
+  const searchQuery = document.getElementById('search');
   const submitBtn = document.getElementById('search-form');
-  const resultsList = document.getElementById('search-results');
+  const results = document.getElementById('search-results');
 
   submitBtn.addEventListener('submit', fetchResults);
 
   function fetchResults(event) {
     event.preventDefault();
-    fetch(`http://localhost:3000/jokes/jokes?q=${searchInput.value}`) // confirm joke.setup/delivery target obj
+    fetch(`http://localhost:3000/jokes/jokes?q=${searchQuery.value}`) 
+    // confirm joke.setup/delivery target obj
       .then(resp => resp.json())
-      // .then(resp => console.log(resp.items));
-      .then(resp => resp.items.forEach(jokeSearch))
+      .then(resp => console.log(resp.items));
+      // .then(resp => resp.items.forEach(jokeSearch))
   }
+
+// console.log(card.joke.setup);
+// console.log(jokes.joke.delivery);
 
 function jokeSearch(joke) {
   // append card to DOM
@@ -100,4 +107,3 @@ function jokeSearch(joke) {
 // create inner card elements
 // append elements to card
 // append card to dom
-*/
