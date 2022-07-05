@@ -23,12 +23,13 @@ Specs:
 CRUD - 2 / x
   1. GET API
   2. PATCH likes
-  3. 
+  3. Search fetch
 Event listeners - 1
 - like button - click event listener
--
+- search button - submit event listener
+-  
 array method - #
-Git Pushes - 8
+Git Pushes - 9
 
 References:
 - API

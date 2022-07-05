@@ -74,6 +74,13 @@ const resultsList = document.getElementById('search-results');
 
 submitBtn.addEventListener('submit', fetchInfo);
 
+function fetchSearchResults(event) {
+  event.preventDefault();
+  fetch('http://localhost:3000/jokes/')
+  .then(resp => resp.json())
+  .then(resp => console.log(resp.items));
+}
+
 // function renderSearch() {
 //   const textField = document.createElement('form');
 //   textField.idName = "search";
