@@ -57,3 +57,20 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
 
 //   document.append(textField);
 // }
+
+<nav class="nav">
+  <ul>
+    <li>
+      <a href="#" class="nav_link">Dashboard</a>
+    </li>
+    <li>
+      <a href="#jokes" class="nav_link">Jokes</a>
+    </li>
+    <li>
+      <a href="#add-joke" class="nav_link">Add a joke</a>
+    </li>
+    <li>
+      <a href="#search" class="nav_link">Search</a>
+    </li>
+  </ul>
+</nav>

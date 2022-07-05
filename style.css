@@ -26,7 +26,7 @@ h1 {
 }
 
 #jokes-container {
-  text-align: center;
+  align-content: center;
 }
 
 .card {
