@@ -67,6 +67,13 @@ function renderJoke(joke) {
   jokes.append(card);
 }
 
+// Search section
+const searchInput = document.getElementById('search');
+const submitBtn = document.getElementById('search-form');
+const resultsList = document.getElementById('search-results');
+
+submitBtn.addEventListener('submit', fetchInfo);
+
 // function renderSearch() {
 //   const textField = document.createElement('form');
 //   textField.idName = "search";

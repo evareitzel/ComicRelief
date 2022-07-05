@@ -20,7 +20,7 @@ As a user, I want to input text into a form field and click a "submit" button so
 
 
 Specs: 
-CRUD - - / x
+CRUD - 2 / x
   1. GET API
   2. PATCH likes
   3. 
@@ -28,7 +28,7 @@ Event listeners - 1
 - like button - click event listener
 -
 array method - #
-Git Pushes - 7
+Git Pushes - 8
 
 References:
 - API
