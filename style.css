@@ -25,6 +25,10 @@ h1 {
   font-weight: 900
 }
 
+#jokes {
+  text-align: center;
+}
+
 .card {
   background: #eeeeee;
   display: inline-block; 
@@ -49,4 +53,9 @@ h1 {
 
 .likes {
   float: right;
+}
+
+#search-container {
+  padding: 50px 25px;
+  text-align: center;
 }

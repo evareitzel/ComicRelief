@@ -1,4 +1,4 @@
-jokeCollection = document.querySelector('#joke-collection');
+jokes = document.querySelector('#jokes');
 
 // Fetch info
 
@@ -64,8 +64,22 @@ function renderJoke(joke) {
   card.append(category, setup, delivery, space, likeBtn, likes);
 
   // append card to DOM
-  jokeCollection.append(card);
+  jokes.append(card);
 }
+
+// function renderSearch() {
+//   const textField = document.createElement('form');
+//   textField.idName = "search";
+//   console.log(textField); 
+
+//   document.append(textField);
+// }
+
+// Search jokes by "if this joke contains keyword"
+// function search(joke) {}
+  // if joke.setup or joke.delivery contains this keyword
+  // get joke 
+  // append joke card to DOM
 
 
 // Add a new joke
@@ -75,5 +89,3 @@ function renderJoke(joke) {
 // create inner card elements
 // append elements to card
 // append card to dom
-
-// Search jokes by "if this joke contains keyword"

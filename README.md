@@ -28,7 +28,7 @@ Event listeners - 1
 - like button - click event listener
 -
 array method - #
-Git Pushes - 6
+Git Pushes - 7
 
 References:
 - API
