@@ -25,7 +25,7 @@ h1 {
   font-weight: 900
 }
 
-#jokes {
+#jokes-container {
   text-align: center;
 }
 
@@ -35,7 +35,7 @@ h1 {
   padding: 10px 20px 20px;
   margin: 20px 10px 10px 10px;
   background-color: #ffffff;
-  /* height: 300px; */
+  min-height: 300px;
   width: 250px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2)

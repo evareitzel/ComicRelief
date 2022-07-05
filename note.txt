@@ -50,4 +50,10 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
         }
       }) 
 
-      
+      // function renderSearch() {
+//   const textField = document.createElement('form');
+//   textField.idName = "search";
+//   console.log(textField); 
+
+//   document.append(textField);
+// }

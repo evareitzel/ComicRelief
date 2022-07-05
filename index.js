@@ -1,15 +1,14 @@
-jokes = document.querySelector('#jokes');
+const jokesContainer = document.getElementById('jokes-container');
+
+//// Display jokes section
 
 // Fetch info
-
 // GET jokes 
 fetch('http://localhost:3000/jokes/')
   .then(response => response.json())
-  // .then(data => console.log(data));
   .then(function (data) {
     data.forEach((joke) => {
       renderJoke(joke);
-      // console.log(joke);
     })
   })
 
@@ -27,10 +26,9 @@ function addLike(event, joke) {
     })
   })
     .then(data => data.json())
-    .then(response => {
+    .then(response => { // response unused?
       event.target.nextElementSibling.innerText = `${more} likes`
     })
-    console.log(joke.likes);
 }
 
 function renderJoke(joke) {
@@ -44,7 +42,7 @@ function renderJoke(joke) {
 
   const setup = document.createElement('p');
   setup.innerText = joke.setup;
-   
+
   const delivery = document.createElement('p');
   delivery.innerText = joke.delivery;
 
@@ -63,38 +61,37 @@ function renderJoke(joke) {
   // append elements to card
   card.append(category, setup, delivery, space, likeBtn, likes);
 
+    // append card to DOM
+    jokesContainer.append(card);
+}
+
+/*
+//// Search section
+  const searchInput = document.getElementById('search');
+  // console.log(searchInput.value);
+  const submitBtn = document.getElementById('search-form');
+  const resultsList = document.getElementById('search-results');
+
+  submitBtn.addEventListener('submit', fetchResults);
+
+  function fetchResults(event) {
+    event.preventDefault();
+    fetch(`http://localhost:3000/jokes/jokes?q=${searchInput.value}`) // confirm joke.setup/delivery target obj
+      .then(resp => resp.json())
+      // .then(resp => console.log(resp.items));
+      .then(resp => resp.items.forEach(jokeSearch))
+  }
+
+function jokeSearch(joke) {
   // append card to DOM
-  jokes.append(card);
-}
-
-// Search section
-const searchInput = document.getElementById('search');
-const submitBtn = document.getElementById('search-form');
-const resultsList = document.getElementById('search-results');
-
-submitBtn.addEventListener('submit', fetchInfo);
-
-function fetchSearchResults(event) {
-  event.preventDefault();
-  fetch('http://localhost:3000/jokes/')
-  .then(resp => resp.json())
-  .then(resp => console.log(resp.items));
-}
-
-// function renderSearch() {
-//   const textField = document.createElement('form');
-//   textField.idName = "search";
-//   console.log(textField); 
-
-//   document.append(textField);
-// }
+  // jokes.append(card);
+} 
 
 // Search jokes by "if this joke contains keyword"
 // function search(joke) {}
   // if joke.setup or joke.delivery contains this keyword
-  // get joke 
+  // get joke
   // append joke card to DOM
-
 
 // Add a new joke
 // form input
@@ -103,3 +100,4 @@ function fetchSearchResults(event) {
 // create inner card elements
 // append elements to card
 // append card to dom
+*/
