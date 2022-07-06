@@ -20,16 +20,13 @@ As a user, I want to input text into a form field and click a "submit" button so
 
 
 Specs: 
-CRUD - 2 / x
-  1. GET API
-  2. PATCH likes
-  3. Search fetch
-Event listeners - 1
+1. Use an API
+2. Event listeners (3)
 - like button - click event listener
 - search button - submit event listener
--  
-array method - #
-Git Pushes - 12
+- onhover over card - view delivery 
+array method - 1 (forEach)
+Git Pushes - 13
 
 References:
 - API

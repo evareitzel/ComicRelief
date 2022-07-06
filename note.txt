@@ -1,41 +1,7 @@
-from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
-<script>
-    var pages = {
-      'home' : `Welcome to Comic Relief. This is our homepage.` //,
-      // 'aboutus' : ...,
-      // 'services': ...,
-      // 'contact': ...
-    };
-
-    function getPageContent(page) {
-      var contentToReturn;
-
-      switch(page){
-        //...
-      }
-
-    }
-    </script>
-
-// https://v2.jokeapi.dev/joke/Any?safe-mode
-    // 20220702191522
-    // 20220702191553
-    // 20220702191904
-    // 20220702192033
-    // 20220702192114
-
-    // option: flags sidebar (~ fun police) 
-
-    // card css --> 
+   // card css --> 
     // https://codepen.io/kolpak/pen/ezoGWy (via )
 
   // ♡ ♥ ❤
-
-  // joke.flags
-  // if flags.value === true 
-  // display flag
-  // else 
-  // display "no flags"
 
   // From "Building the Simple Liker App" //
     function likeEvent (event){
@@ -75,9 +41,7 @@ from https://www.youtube.com/watch?v=A26IqhyHU4c @4min:
   </ul>
 </nav>
 
-Search feature- iterator
 ? Like btn
-
 
 // Lines 52-59
  likeBtn.className = 'like-btn';
@@ -114,3 +78,43 @@ look at event listeners
   ACTION + target
 
   submit handler jokes
+
+  // Notes from 7.5 course instructor mtg
+  - filter catergory = search word
+  - single, pluralized, non-capital letters
+  - array.filter method - outputs new array
+  - array.clear info - output new arr post-filter
+  - else - if empty? (default to full collection)
+  - category search -->
+    - fram prob: narrow list down to...
+  - Cmd - D / alt - D - multiple cursors selection
+
+
+// Fix likeBtn //
+Line 16 function addLike(event, joke, [Element you want to change here]) {
+  const more = parseInt(joke.likes++);
+  fetch(`http://localhost:3000/jokes/${joke.id}`, {
+    method: 'PATCH',
+    headers: {
+      "Content-type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      "likes": more
+    })
+  })
+    .then(data => data.json())
+    .then(updatedJoke => { // response unused?
+      [Element you want to change here].innerText = `${updatedJoke.likes} likes`
+    })
+Line 32 }
+
+
+const likeBtn = document.createElement('button');
+  likeBtn.className = 'like-btn';
+  likeBtn.setAttribute('id', joke.id);
+  likeBtn.innerText = 'like ♡';
+  likeBtn.addEventListener('click', event => addLike(event, joke, [Element you want to change here]));
+
+
+  const likes = document.createElement('p');
