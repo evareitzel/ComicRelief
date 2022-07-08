@@ -118,3 +118,19 @@ const likeBtn = document.createElement('button');
 
 
   const likes = document.createElement('p');
+
+  function showJokes(jokeArray) {
+  for (let i = 0; i < 12; i++) {
+    const obj = jokeArray.joke;
+    joke = joke + i;
+  }
+  console.log(jokeArray);
+}
+
+// Add a new joke
+// form input
+// function with fetch
+// function renderNewJoke
+// create inner card elements
+// append elements to card
+// append card to dom

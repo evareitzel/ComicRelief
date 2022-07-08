@@ -3,19 +3,25 @@ let jokeArray;
 
 fetch('http://localhost:3000/jokes/')
   .then(response => response.json())
-  .then(function (data) { 
+  .then(function (data) {
     jokeArray = data;
-    jokeArray.forEach((joke) => {
+    data.forEach((joke) => {
       renderJoke(joke);
     })
   })
 
-function showJokes(jokeArray) {
-  for (let i = 0; i < 12; i++) {
-    const obj = jokeArray.joke;
-    joke = joke + i;
+// console.log(jokeArray);
+
+// let newJokes = [];
+// jokeArray.forEach(joke => {
+//   newJokes.push(joke)
+// })
+// console.log(newJokes);
+
+function showJokes(jokeArray){
+  for(let i=0; i<0; i++) {
+    console.log(i)
   }
-  console.log(jokeArray);
 }
 
 function addLike(event, joke, likes) {
@@ -63,56 +69,59 @@ function renderJoke(joke) {
 
   card.append(category, setup, delivery, space, likeBtn, likes);
 
-    jokesContainer.append(card);
+  jokesContainer.append(card);
 }
 
-//// Search section
-// OPTION TO SEARCH BY CATEGORY
-// OPTION TO DISPLAY JOKES FROM SHORTEST TO LONGEST
+
+const card = document.getElementsByClassName('card');
+// console.log(card);
+
+card.addEventListener('mouseover', changeColor)
+
+function changeColor() {
+  // event.target.style.color = "blue";
+  // card.style.background = "blue";
+setBackground("#444444");
+}
+
+card.addEventListener('click', displayDelivery);
+
+function displayDelivery() {
+  const delivery = document.createElement('p');
+  delivery.innerText = joke.delivery;
+  card.append(delivery);
+}
+
+
+const searchQuery = document.getElementById('search');
+const submitBtn = document.getElementById('search-form');
+const results = document.getElementById('search-results');
+
+submitBtn.addEventListener('submit', fetchResults);
 
 function keywordSearch(joke) {
-  const searchQuery = document.getElementById('search');
-  const submitBtn = document.getElementById('search-form');
-  const results = document.getElementById('search-results');
-
-  submitBtn.addEventListener('submit', fetchResults);
-  // jokeArray
-  // confirm joke.setup/delivery target obj
-  console.log(jokeArray.joke.setup);
-  console.log(jokeArray.joke.delivery);
-
   const searchResult = newJokeArray.filter(joke => joke.include(searchQuery));
   console.log(searchResult);
 }
-  // Pseudocode
-  // const newJokeArray = jokeArray.joke.setup + jokeArray.joke.delivery
-  // get searchQuery
-  // make searchQuery include single, pluralized, non-capital letters
-  // find string(s) in newJokeArray containing searchQuery (filter method)
-  // return joke(s) containing searchQuery
-  // If no matches, display 'No matches found"and display full joke list below.
 
-  // - filter catergory = search word
-  // - single, pluralized, non-capital letters
-  // - array.filter method - outputs new array
-  // - array.clear info - output new arr post-filter
-  // - else - if empty? (default to full collection)
+const searchResult = newjokeArray.filter(containsSearchQuery);
+
+// function enhanceSearchQuery(){
+// modify searchQuery to include single, pluralized, non-capital letters
+  // toLowerCase(); // convert everything to lowercase
+  // toUpperCase();
+  // singular
+  // pluralize()
+
+
+// }
+
+function containsSearchQuery(joke) {
+  joke.includes(searchQuery);
+}
 
   // jokes.append(card);
   // append card to DOM
- 
 
-
-// Search jokes by "if this joke contains keyword"
-// function search(joke) {}
-  // if joke.setup or joke.delivery contains this keyword
-  // get joke
-  // append joke card to DOM
-
-// Add a new joke
-// form input
-// function with fetch
-// function renderNewJoke
-// create inner card elements
-// append elements to card
-// append card to dom
+  // else - if empty? (default to full collection)
+  // If no matches, display 'No matches found"and display full joke list below.
