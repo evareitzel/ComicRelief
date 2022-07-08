@@ -76,12 +76,10 @@ function renderJoke(joke) {
 const card = document.getElementsByClassName('card');
 // console.log(card);
 
-card.addEventListener('mouseover', changeColor)
+card.addEventListener('click', changeColor) // mouseover
 
 function changeColor() {
-  // event.target.style.color = "blue";
-  // card.style.background = "blue";
-setBackground("#444444");
+  card.classList.toggle('card-delivery');
 }
 
 card.addEventListener('click', displayDelivery);

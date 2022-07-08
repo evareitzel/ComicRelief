@@ -134,3 +134,35 @@ const likeBtn = document.createElement('button');
 // create inner card elements
 // append elements to card
 // append card to dom
+
+
+
+// - filter category = search word
+  // - single, pluralized, non-capital letters
+  // - array.filter method - outputs new array
+  // - array.clear info - output new arr post-filter
+  // - else - if empty? (default to full collection)
+
+  // jokes.append(card);
+  // append card to DOM
+
+
+// Search jokes by "if this joke contains keyword"
+// function search(joke) {}
+  // if joke.setup or joke.delivery contains this keyword
+  // get joke
+  // append joke card to DOM
+
+
+    // Pseudocode
+  // const newJokeArray = jokeArray.joke.setup + jokeArray.joke.delivery
+  // get searchQuery
+  // modify searchQuery to include single, pluralized, non-capital letters
+  // find string(s) in newJokeArray containing searchQuery (filter method) (?includes())
+  // return joke(s) containing searchQuery
+    // return joke.includes(refinedSearchQuery)
+  // If no matches, display 'No matches found"and display full joke list below.
+
+    // event.target.style.color = "blue";
+  // card.style.background = "blue";
+  // setBackground("#444444");
