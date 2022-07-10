@@ -166,3 +166,35 @@ const likeBtn = document.createElement('button');
     // event.target.style.color = "blue";
   // card.style.background = "blue";
   // setBackground("#444444");
+
+  // let newJokes = [];
+// jokeArray.forEach(joke => {
+//   newJokes.push(joke)
+// })
+// console.log(newJokes);
+
+// function showJokes(jokeArray){
+//   for(let i=0; i<0; i++) {
+//     console.log(i)
+//   }
+// }
+
+// card.addEventListener('click', changeColor) // mouseover
+
+// function changeColor() {
+//   card.classList.toggle('card-delivery');
+// }
+
+// card.addEventListener('click', displayDelivery);
+
+
+function displayDelivery(joke, e) {
+  e.preventDefault();
+  e.target.innerText === joke.setup ? e.target.innerText = joke.delivery : e.target.innerText = joke.setup;
+
+  // const delivery = document.createElement('p');
+  // delivery.innerText = joke.delivery;
+  // card.append(delivery);
+  // e.target.innerText = joke.delivery;
+   //// console.log(joke, e);
+}
