@@ -3,9 +3,9 @@
 <html>
 
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
     SPA (Single Page Application)
   </title>
@@ -19,16 +19,35 @@
     <img id="hero-img" src="images/horse_musicians.jpg">
   </div>
 
-  <div id="search-container">
-    <h4>Search</h4>
-    <form id="search-form">
-      <input id='search' type='text' name='search'>
-      <input type="submit" name="submit" />
+  <div id="form-container">
+    <h4>Add Joke</h4>
+    <form id="add-joke-form">
+      <div id="add-joke-category">
+        <label>
+          Category
+        </label>
+        <br />
+        <label><input id="dark" type="checkbox">Dark</label>
+        <label><input id="programming" type="checkbox">Programming</label>
+        <label><input id="pun" type="checkbox">Pun</label>
+        <label><input id="spooky" type="checkbox">Spooky</label>
+        <label><input id="misc" type="checkbox">Misc</label>
+        <label>Setup</label>
+        <br />
+      </div>
+      <input id='add-joke-setup' type='text' name='joke-setup'>
+      <br />
+      <label>Delivery</label>
+      <br />
+      <input id='add-joke-delivery' type='text' name='joke-delivery'>
+      <br />
+      <button id="submit-new-joke" type="submit" name="submit">
+      <hr />
     </form>
   </div>
 
   <div id="jokes-container"></div>
- 
+
   <script src="index.js"></script>
 </body>
 

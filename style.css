@@ -60,7 +60,24 @@ h1 {
   float: right;
 }
 
-#search-container {
-  padding: 50px 25px;
+#form-container {
+  padding: 25px 10px 25px 0;
+}
+
+#add-joke-form {
+  text-align: left;
+  line-height: 24px;
+}
+
+form>input {
+  margin: 0 0 8px 0;
+  width: 100%;
+  /* max-width:  600px; */
+
+}
+
+/*
+.submit-form {
   text-align: center;
 }
+*/

@@ -6,10 +6,16 @@ function getJokes() {
   .then(response => response.json())
   .then(function (data) {
     jokeArray = data;
+    // On initial render, send jokeArray to [ New Function - if/else for all/some jokes ]
+
+    // data.forEach(searchJokes)});
+
+    // data.forEach((joke) => {
+    // searchJokes(joke);
 
     data.forEach((joke) => {
       renderJoke(joke);
-      // console.log(jokeArray);
+      console.log(jokeArray);
     })
   })
 }
@@ -33,36 +39,13 @@ function addLike(event, joke, likes) {
     })
 }
 
-const addJokeCategory = document.getElementById('add-joke-category');
-const addJokeSetup = document.getElementById('add-joke-setup');
-const addJokeDelivery = document.getElementById('add-joke-delivery');
-// const addJokeForm = document.getElementById('add-joke-form');
-const submitButton = document.getElementById('submit-new-joke');
-
-submitButton.addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  console.log(event);
-  addJokeFormHandler(event)
-});
-
-function addJokeFormHandler(event, input) {
-  // get data to pass into fxn (console-log)
-// get joke.category
-console.log(addJokeCategory);
-// get joke.setup
-// get joke.delivery
-// fetch --> PUT (new content)
-// renderJoke; (newJoke - at top) -- should be automatic OR  remind renderJoke (page reload helper function))
-}
-
 function renderJoke(joke) {
   const card = document.createElement('div');
   card.className = 'card';
 
   const category = document.createElement('h3');
   category.innerText = joke.category;
-  console.log(addJokeSetup);
+
   const setupDelivery = document.createElement('p');
   setupDelivery.innerText = joke.setup;
   setupDelivery.addEventListener('mouseover', (e) => displayDelivery(joke, e));
@@ -89,6 +72,54 @@ function displayDelivery(joke, e) {
   e.target.innerText === joke.setup ? e.target.innerText = joke.delivery : e.target.innerText = joke.setup;
   // console.log(joke, e);
 }
+
+const input = document.getElementById('search');
+const searchForm = document.getElementById('search-form');
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  console.log(event);
+  searchJokes(event)
+});
+
+// function searchJokes(event, input = "all") {
+//   event.preventDefault();
+//   console.log(event.target.value);
+//   if (input === "all") {
+//     renderJoke();
+//   } else {
+//     forEach(joke)
+//       if joke.includes(input) {
+//       renderJoke(joke);
+//     }
+//     }
+  
+  // #1. if input === all, render all jokes
+  // #2. else (iterate over filtered array and) render filtered jokes (search result).
+  // clear joke container btw renders.
+
+  // const searchResult = newJokeArray.filter(joke => joke.include(searchQuery));
+// }
+
+// const searchResult = newjokeArray.filter(containsInput);
+
+// function enhanceInput(){
+// modify input to include single, pluralized, non-capital letters
+  // toLowerCase(); // convert everything to lowercase
+  // toUpperCase();
+  // singular
+  // pluralize()
+// }
+
+// function containsInput(joke) {
+//   joke.includes(input);
+// }
+
+//   // jokes.append(card);
+//   // append card to DOM
+
+//   // else - if empty? (default to full collection)
+//   // If no matches, display 'No matches found"and display full joke list below.
 
 document.addEventListener("DOMContentLoaded", () => {
   getJokes();
