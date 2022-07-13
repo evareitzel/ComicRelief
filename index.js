@@ -33,10 +33,6 @@ function addLike(event, joke, likes) {
     })
 }
 
-const addJokeCategory = document.getElementById('add-joke-category');
-const addJokeSetup = document.getElementById('add-joke-setup');
-const addJokeDelivery = document.getElementById('add-joke-delivery');
-// const addJokeForm = document.getElementById('add-joke-form');
 const submitButton = document.getElementById('submit-new-joke');
 
 submitButton.addEventListener('submit', (event) => {
@@ -48,13 +44,40 @@ submitButton.addEventListener('submit', (event) => {
 
 function addJokeFormHandler(event, input) {
   // get data to pass into fxn (console-log)
-// get joke.category
 console.log(addJokeCategory);
+// get joke.category
+const addJokeCategory = document.getElementById('add-joke-category');
 // get joke.setup
+const addJokeSetup = document.getElementById('add-joke-setup');
 // get joke.delivery
+const addJokeDelivery = document.getElementById('add-joke-delivery');
+// const addJokeForm = document.getElementById('add-joke-form');
+
 // fetch --> PUT (new content)
+fetch(`http://localhost:3000/jokes/${joke.id}`, {
+  method: 'PUT',
+  headers: {
+    "Content-type": "application/json",
+    Accept: "application/json"
+  },
+  body: JSON.stringify({
+    "category": addJokeCategory, 
+      "type": "twopart",
+      "setup": addJokeSetup,
+      "delivery": addJokeDelivery,
+      "id": 1, // make / get joke ID
+      "likes": 0
+  })
+})
+  .then(response => response.json())
+  .then(function (data) {
+    data.forEach((joke) => {
+      renderJoke(joke);
+
 // renderJoke; (newJoke - at top) -- should be automatic OR  remind renderJoke (page reload helper function))
 }
+    )}
+  )}
 
 function renderJoke(joke) {
   const card = document.createElement('div');
