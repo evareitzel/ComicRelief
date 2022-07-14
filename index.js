@@ -33,29 +33,30 @@ function addLike(event, joke, likes) {
     })
 }
 
-const submitButton = document.getElementById('submit-new-joke');
+const addJokeForm = document.getElementById('add-joke-form');
 
-submitButton.addEventListener('submit', (event) => {
+addJokeForm.addEventListener('submit', (event) => {
   event.preventDefault();
-
+  const addJokeSetup = document.getElementById('add-joke-setup');
   console.log(event);
-  addJokeFormHandler(event)
+  addJokeFormHandler(event.target.addJokeForm.data)
+  console.log(event.target.addJokeForm.data);
 });
 
-function addJokeFormHandler(event, input) {
+function addJokeFormHandler(event) {
   // get data to pass into fxn (console-log)
-console.log(addJokeCategory);
 // get joke.category
 const addJokeCategory = document.getElementById('add-joke-category');
+console.log(addJokeCategory);
 // get joke.setup
-const addJokeSetup = document.getElementById('add-joke-setup');
+// const addJokeSetup = document.getElementById('add-joke-setup');
 // get joke.delivery
 const addJokeDelivery = document.getElementById('add-joke-delivery');
 // const addJokeForm = document.getElementById('add-joke-form');
 
 // fetch --> PUT (new content)
-fetch(`http://localhost:3000/jokes/${joke.id}`, {
-  method: 'PUT',
+fetch(`http://localhost:3000/jokes/`, {
+  method: 'POST',
   headers: {
     "Content-type": "application/json",
     Accept: "application/json"
@@ -65,19 +66,19 @@ fetch(`http://localhost:3000/jokes/${joke.id}`, {
       "type": "twopart",
       "setup": addJokeSetup,
       "delivery": addJokeDelivery,
-      "id": 1, // make / get joke ID
       "likes": 0
   })
 })
   .then(response => response.json())
-  .then(function (data) {
-    data.forEach((joke) => {
-      renderJoke(joke);
+  .then(renderJoke(data));
+
+      // .then(function (data) {
+      //   data.forEach((joke) => {
+          // renderJoke(joke);
+    
 
 // renderJoke; (newJoke - at top) -- should be automatic OR  remind renderJoke (page reload helper function))
 }
-    )}
-  )}
 
 function renderJoke(joke) {
   const card = document.createElement('div');
@@ -85,7 +86,6 @@ function renderJoke(joke) {
 
   const category = document.createElement('h3');
   category.innerText = joke.category;
-  console.log(addJokeSetup);
   const setupDelivery = document.createElement('p');
   setupDelivery.innerText = joke.setup;
   setupDelivery.addEventListener('mouseover', (e) => displayDelivery(joke, e));
