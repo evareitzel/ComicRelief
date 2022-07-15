@@ -124,3 +124,14 @@ searchForm.addEventListener('submit', (event) => {
 document.addEventListener("DOMContentLoaded", () => {
   getJokes();
 })
+
+
+// from addJokeForm event listener
+addJokeFormHandler(event.target.addJokeCategory.value)
+addJokeFormHandler(event.target.addJokeSetup.value)
+addJokeFormHandler(event.target.addJokeDelivery.value)
+console.log(event.target.addJokeForm.value)
+console.log("an event happened");
+// console.log(event.target.addJokeCategory)
+// console.log(event.target.addJokeSetup.value)
+// console.log(event.target.addJokeDelivery.value)

@@ -16,6 +16,7 @@ body {
     position: absolute;
     top: 8px;
     left: 16px;
+    /* drop-shadow: */
 }
 
 #hero-img {

@@ -78,14 +78,14 @@
       "setup": "I hate Russian matryoshka dolls.",
       "delivery": "They're so full of themselves.",
       "id": 87,
-      "likes": 1
+      "likes": 3
     },
     {
       "category": {},
       "type": "twopart",
       "setup": {},
       "delivery": {},
-      "likes": 2,
+      "likes": 6,
       "id": 291
     }
   ]

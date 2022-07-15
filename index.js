@@ -1,5 +1,11 @@
+// Elements
 const jokesContainer = document.getElementById('jokes-container');
-let jokeArray;
+
+const addJokeForm = document.getElementById('add-joke-form');
+const addJokeCategory = document.getElementById('add-joke-category');
+console.log(addJokeCategory);
+const addJokeSetup = document.getElementById('add-joke-setup');
+const addJokeDelivery = document.getElementById('add-joke-delivery');
 
 function getJokes() {
   fetch('http://localhost:3000/jokes/')
@@ -33,53 +39,6 @@ function addLike(event, joke, likes) {
     })
 }
 
-const addJokeForm = document.getElementById('add-joke-form');
-
-addJokeForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const addJokeSetup = document.getElementById('add-joke-setup');
-  console.log(event);
-  addJokeFormHandler(event.target.addJokeForm.data)
-  console.log(event.target.addJokeForm.data);
-});
-
-function addJokeFormHandler(event) {
-  // get data to pass into fxn (console-log)
-// get joke.category
-const addJokeCategory = document.getElementById('add-joke-category');
-console.log(addJokeCategory);
-// get joke.setup
-// const addJokeSetup = document.getElementById('add-joke-setup');
-// get joke.delivery
-const addJokeDelivery = document.getElementById('add-joke-delivery');
-// const addJokeForm = document.getElementById('add-joke-form');
-
-// fetch --> PUT (new content)
-fetch(`http://localhost:3000/jokes/`, {
-  method: 'POST',
-  headers: {
-    "Content-type": "application/json",
-    Accept: "application/json"
-  },
-  body: JSON.stringify({
-    "category": addJokeCategory, 
-      "type": "twopart",
-      "setup": addJokeSetup,
-      "delivery": addJokeDelivery,
-      "likes": 0
-  })
-})
-  .then(response => response.json())
-  .then(renderJoke(data));
-
-      // .then(function (data) {
-      //   data.forEach((joke) => {
-          // renderJoke(joke);
-    
-
-// renderJoke; (newJoke - at top) -- should be automatic OR  remind renderJoke (page reload helper function))
-}
-
 function renderJoke(joke) {
   const card = document.createElement('div');
   card.className = 'card';
@@ -111,6 +70,34 @@ function displayDelivery(joke, e) {
   e.preventDefault();
   e.target.innerText === joke.setup ? e.target.innerText = joke.delivery : e.target.innerText = joke.setup;
   // console.log(joke, e);
+}
+
+addJokeForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const addJokeSetup = document.getElementById('add-joke-setup');
+  console.log(event);
+  addJokeFormHandler(event.target.addJokeForm.value)
+});
+
+function addJokeFormHandler(event) {
+fetch(`http://localhost:3000/jokes/`, {
+  method: 'POST',
+  headers: {
+    "Content-type": "application/json",
+    Accept: "application/json"
+  },
+  body: JSON.stringify({
+    "category": addJokeCategory, 
+      "type": "twopart",
+      "setup": addJokeSetup,
+      "delivery": addJokeDelivery,
+      "likes": 0
+  })
+})
+  //const joke = data;
+  .then(response => response.json())
+  .then(renderJoke(data));
+  // .then(renderJoke(joke));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
