@@ -2,8 +2,6 @@ body {
   font-family: 'Gill sans', sans-serif;
 }
 
-
-
 #hero {
   background: #eee;
   height: 100%
@@ -21,27 +19,19 @@ body {
 
 #hero-img {
   width:100%
-/* get text to float over img */
 }
 
-nav>ul {
-  list-style: none;
-  /* get links floating and aligned properly */
-}
-
-.nav_link {
-  text-decoration: none
+#intro {
+  margin-top: 25px; 
+  margin-bottom: 50px;
 }
 
 h1 {
   font-weight: 900
 }
 
-#greeting-hello {
-
-}
-
-#greeting-goodbye {
+#footer {
+  background: #eee;
   padding-top: 20px;
   padding-bottom: 50px;
   text-align: center;
@@ -68,9 +58,10 @@ h1 {
   font-size: 32px;
 }
 
-.like-btn {
+.button {
   border: 1px solid;
   color: #292929;
+  margin-bottom: 25px;
   padding: 8px 20px;
   text-align: center;
   text-decoration: none;
@@ -83,6 +74,7 @@ h1 {
 }
 
 #form-container {
+  margin: 50px 0 50px 0; 
   padding: 25px 10px 25px 0;
 }
 
@@ -91,15 +83,8 @@ h1 {
   line-height: 24px;
 }
 
-form>input {
-  margin: 0 0 8px 0;
+.text-field {
   width: 100%;
-  /* max-width:  600px; */
-
+  max-width: 600px;
+  margin: 0 10px 20px 0;
 }
-
-/*
-.submit-form {
-  text-align: center;
-}
-*/

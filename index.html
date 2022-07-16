@@ -21,11 +21,18 @@
     <img id="hero-img" src="images/horse_musicians.jpg">
   </div>
 
-  <div></div>
-    <p>Welcome to ComicRelief! We've got jokes for you →</p>
+  <div id="intro">
+    <p>Welcome to ComicRelief! Please enjoy a few jokes →</p>
+    <a href="#add-joke" class="button">Add joke</a>
+  </div>
 
-  <div id="form-container">
-    <h4>Add Joke</h4>
+  <div id="jokes-container"></div>
+
+  <hr />
+  <div action="/db.json" method="post" id="form-container">
+    <a id="add-joke">
+      <h4>Add Joke</h4>
+    </a>
     <form id="add-joke-form">
       <div id="add-joke-category">
         <label for="category">
@@ -37,23 +44,29 @@
         <label><input id="pun" type="checkbox">Pun</label>
         <label><input id="spooky" type="checkbox">Spooky</label>
         <label><input id="misc" type="checkbox">Misc</label>
+      </div>
+      <div>
         <label for="setup">Setup</label>
         <br />
+        <input class='text-field' id='add-joke-setup' type='text' name='joke-setup' required>
       </div>
-      <input id='add-joke-setup' type='text' name='joke-setup'>
-      <br />
-      <label for="delivery">Delivery</label>
-      <br />
-      <input id='add-joke-delivery' type='text' name='joke-delivery'>
-      <br />
-      <button id="submit-new-joke" type="submit" name="submit">Submit</button>
-      <hr />
+      <div>
+        <label for="delivery">Delivery</label>
+        <br />
+        <input class='text-field' id='add-joke-delivery' type='text' name='joke-delivery' required>
+      </div>
+      <div>
+        <!-- <button class="button" type="submit" name="submit">Submit</button> -->
+        <input class="button" type="submit" value="Submit">
+
+      </div>
     </form>
   </div>
 
-  <div id="jokes-container"></div>
-  <p id="greeting-goodbye">Enjoy the levity ☺️</p>
-  <script src="index.js"></script>
+  <div id="footer">
+    <p>Enjoy the levity ☺️</p>
+    <script src="index.js"></script>
+  </div>
 </body>
 
 </html>

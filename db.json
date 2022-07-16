@@ -2,7 +2,6 @@
   "jokes": [
     {
       "category": "Pun",
-      "type": "twopart",
       "setup": "Why does the size of the snack not matter to a giraffe?",
       "delivery": "Because even a little bit goes a long way.",
       "id": 290,
@@ -10,7 +9,6 @@
     },
     {
       "category": "Misc",
-      "type": "twopart",
       "setup": "My neighbor is a 90 year old with Alzheimer's, I see him every morning and he asks me If I've seen his wife.\nEvery day I have to tell this poor man that his wife died 20 years ago.\nI could have moved to another house or even ignore his question.",
       "delivery": "But the look of joy in his eyes whenever I answer him is worth the world.",
       "id": 145,
@@ -18,7 +16,6 @@
     },
     {
       "category": "Programming",
-      "type": "twopart",
       "setup": "Why did the Python data scientist get arrested at customs?",
       "delivery": "She was caught trying to import pandas!",
       "id": 234,
@@ -26,7 +23,6 @@
     },
     {
       "category": "Pun",
-      "type": "twopart",
       "setup": "The gas Argon walks into a bar.\nThe barkeeper says \"What would you like to drink?\"",
       "delivery": "But Argon doesn't react.",
       "id": 148,
@@ -34,7 +30,6 @@
     },
     {
       "category": "Pun",
-      "type": "twopart",
       "setup": "What do you call a cow with no legs?",
       "delivery": "Ground beef.",
       "id": 196,
@@ -42,7 +37,6 @@
     },
     {
       "category": "Programming",
-      "type": "twopart",
       "setup": "Why do programmers wear glasses?",
       "delivery": "Because they need to C#",
       "id": 50,
@@ -50,7 +44,6 @@
     },
     {
       "category": "Dark",
-      "type": "twopart",
       "setup": "I'm thinking of setting up a comedy group to help people going through cancer treatment.",
       "delivery": "I'll call it \"A Sense of Tumor\".",
       "id": 97,
@@ -58,7 +51,6 @@
     },
     {
       "category": "Pun",
-      "type": "twopart",
       "setup": "What's the difference between a poorly dressed man on a unicycle and a well dressed man on a bicycle?",
       "delivery": "Attire.",
       "id": 267,
@@ -66,27 +58,24 @@
     },
     {
       "category": "Pun",
-      "type": "twopart",
       "setup": "What did the customer say to the waiter?",
       "delivery": "I'm all fed up with your service.",
       "id": 190,
-      "likes": 0
+      "likes": 1
     },
     {
       "category": "Pun",
-      "type": "twopart",
       "setup": "I hate Russian matryoshka dolls.",
       "delivery": "They're so full of themselves.",
       "id": 87,
-      "likes": 3
+      "likes": 4
     },
     {
-      "category": {},
-      "type": "twopart",
-      "setup": {},
-      "delivery": {},
-      "likes": 6,
-      "id": 291
+      "category": "Misc",
+      "setup": "Why does Santa have three gardens?",
+      "delivery": "So he can 'ho ho ho'!",
+      "likes": 7,
+      "id": 242
     }
   ]
 }
