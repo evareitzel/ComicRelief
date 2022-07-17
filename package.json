@@ -1,0 +1,21 @@
+{
+  "name": "phase-1-spa",
+  "version": "1.0.0",
+  "description": "All about my Single Page Application!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evareitzel/phase-1-spa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evareitzel/phase-1-spa/issues"
+  },
+  "homepage": "https://github.com/evareitzel/phase-1-spa#readme"
+}

@@ -2,11 +2,6 @@ const jokesContainer = document.querySelector('#jokes-container');
 
 const formContainer = document.querySelector('#form-container');
 
-// const addJokeForm = document.querySelector('#add-joke-form');
-// const addJokeCategory = document.querySelector('#add-joke-category').value;
-// const addJokeSetup = document.querySelector('#add-joke-setup').value;
-// const addJokeDelivery = document.querySelector('#add-joke-delivery').value;
-
 function getJokes() {
   fetch('http://localhost:3000/jokes/')
     .then(response => response.json())
@@ -36,6 +31,10 @@ function addLike(event, joke, likes) {
       likes.innerText = `${updatedJoke.likes} likes`
     })
 }
+
+// function renderHeroSection() {}
+
+// function renderIntroSection() {}
 
 function renderJoke(joke) {
   const card = document.createElement('div');
@@ -155,7 +154,7 @@ function renderForm() {
 
   const hr = document.createElement('hr');
 
-  categoryInput.append(categoryLabel, space, category1, category1Label, category2, category2Label, category3, category3Label, category4, category4Label, space, space, space);
+  categoryInput.append(categoryLabel, space, category1, category1Label, category2, category2Label, category3, category3Label, category4, category4Label, space);
 
   form.append(formHeading, categoryInput, setupLabel, setupInput, deliveryLabel, deliveryInput, submitBtn, hr);
 
@@ -175,7 +174,7 @@ function renderForm() {
 //       Accept: "application/json"
 //     },
 //     body: JSON.stringify({
-//       "category": addJokeCategory,
+//       "category": addJokeCategory, /// .value
 //       "setup": addJokeSetup,
 //       "delivery": addJokeDelivery,
 //       "likes": 0
