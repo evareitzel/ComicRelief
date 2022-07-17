@@ -24,7 +24,7 @@ Specs:
 - search button - submit event listener
 - onhover over card - view delivery 
 array method - 1 (forEach)
-Git Pushes - 24
+Git Pushes - 25
 
 References:
 - API
