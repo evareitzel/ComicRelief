@@ -30,6 +30,10 @@ h1 {
   font-weight: 900
 }
 
+#add-joke-btn {
+  /* make smooth transition */
+}
+
 #footer {
   background: #eee;
   padding-top: 20px;
@@ -83,8 +87,13 @@ h1 {
   line-height: 24px;
 }
 
-.text-field {
+.input {
   width: 100%;
   max-width: 600px;
   margin: 0 10px 20px 0;
+  /* border: solid 1px; */
+}
+
+hr {
+  width: 100%;
 }
