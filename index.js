@@ -81,35 +81,63 @@ function renderForm() {
   const categoryInput = document.createElement('div');
   categoryInput.setAttribute('id', 'add-joke-category');
   console.log(categoryInput);
+
+  const categoryLabel = document.createElement('label');
+  categoryLabel.innerText = 'Category';
+
+  const space = document.createElement('br');
+
+  // pun
+  const category1 = document.createElement('input');
+  category1.type = 'checkbox';
+  category1.setAttribute('id', 'category1')
+  category1.name = 'category1';
+  category1.value = 'Pun';
+
+  const category1Label = document.createElement('label');
+  category1Label.innerText = 'Pun';
+
+  // dark
+  const category2 = document.createElement('input');
+  category2.type = 'checkbox';
+  category2.setAttribute('id', 'category2');
+  category2.name = 'category2';
+  category2.value = 'Dark';
+
+  const category2Label = document.createElement('label');
+  category2Label.innerText = 'Dark';
+
+  // misc
+  const category3 = document.createElement('input');
+  category3.type = 'checkbox';
+  category3.setAttribute('id', 'category3');
+  category3.name = 'category3';
+  category3.value = 'Misc';
+
+  const category3Label = document.createElement('label');
+  category3Label.innerText = 'Misc';
+
+  // programming
+  const category4 = document.createElement('input');
+  category4.type = 'checkbox';
+  category4.setAttribute('id', 'category4');
+  category4.name = 'category4';
+  category4.value = 'Programming';
   
-  const categoryHeading = document.createElement('p');
-  categoryHeading.innerText = 'Category';
+  const category4Label = document.createElement('label');
+  category4Label.innerText = 'Programming';
 
-//   // pun
-
-//   // dark
-//   //// const category2 = document.createElement('input');
-//   // category2.type = 'checkbox';
-//   //// category2.setAttribute('id', 'category2');
-//   // category2.name = "category2";
-//   // category2.value = "Dark";
-
-//   //// const category2Label = document.createElement('label');
-
-//   // misc
-
-//   // programming
 
   const setupLabel = document.createElement('label');
   setupLabel.innerText = 'Setup ';
-    // setupLabel.for = 'setup';
+  // setupLabel.for = 'setup';
 
   const setupInput = document.createElement('input');
   setupInput.className = 'input';
   setupInput.type = 'text';
-  setupInput.name='setup';
-    // setupInput.setAttribute('id', 'add-joke-setup');
- 
+  setupInput.name = 'setup';
+  // setupInput.setAttribute('id', 'add-joke-setup');
+
   const deliveryLabel = document.createElement('label');
   deliveryLabel.innerText = 'Delivery ';
   // deliveryLabel.for = 'delivery';
@@ -117,22 +145,19 @@ function renderForm() {
   const deliveryInput = document.createElement('input');
   deliveryInput.className = 'input';
   deliveryInput.type = 'text';
-  deliveryInput.name='delivery'; 
- // deliveryInput.setAttribute('id', 'add-joke-delivery');
+  deliveryInput.name = 'delivery';
+  // deliveryInput.setAttribute('id', 'add-joke-delivery');
 
-const submitBtn = document.createElement('input');
-submitBtn.type = 'submit';
-submitBtn.value = 'submit';
-submitBtn.className = 'button';
+  const submitBtn = document.createElement('input');
+  submitBtn.type = 'submit';
+  submitBtn.value = 'submit';
+  submitBtn.className = 'button';
 
-const hr = document.createElement('hr');
+  const hr = document.createElement('hr');
 
-categoryInput.append(categoryHeading);
-  // category2, labelCategory2
+  categoryInput.append(categoryLabel, space, category1, category1Label, category2, category2Label, category3, category3Label, category4, category4Label, space, space, space);
 
   form.append(formHeading, categoryInput, setupLabel, setupInput, deliveryLabel, deliveryInput, submitBtn, hr);
-
-// deliveryLabel, deliveryInput, submitBtn, hr);
 
   formContainer.append(form);
 }
