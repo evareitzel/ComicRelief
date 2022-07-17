@@ -14,8 +14,6 @@ function getJokes() {
       jokeArray = data;
       data.forEach((joke) => {
         renderJoke(joke);
-        console.log(jokeArray);
-
       })
     })
 }
@@ -72,19 +70,20 @@ function displayDelivery(joke, e) {
 }
 
 
-// function renderForm() {
+function renderForm() {
 
-//   const form = document.createElement('form');
-//   form.setAttribute('id', 'add-joke-form');
+  const form = document.createElement('form');
+  form.setAttribute('id', 'add-joke-form');
 
-//   const formHeading = document.createElement('h3');
-//   formHeading.innerText = 'Add Joke';
+  const formHeading = document.createElement('h3');
+  formHeading.innerText = 'Add Joke';
 
-//   //// const categoryInput = document.createElement('div');
-//   //// form.setAttribute('id', 'add-joke-category');
+  const categoryInput = document.createElement('div');
+  categoryInput.setAttribute('id', 'add-joke-category');
+  console.log(categoryInput);
   
-//   //// const categoryLabel = document.createElement('label');
-//   // categoryLabel.for = 'category';
+  const categoryHeading = document.createElement('p');
+  categoryHeading.innerText = 'Category';
 
 //   // pun
 
@@ -101,41 +100,42 @@ function displayDelivery(joke, e) {
 
 //   // programming
 
+  const setupLabel = document.createElement('label');
+  setupLabel.innerText = 'Setup ';
+    // setupLabel.for = 'setup';
 
-//   const setupLabel = document.createElement('label');
-//   setupLabel.innerText = 'Setup ';
-//     // setupLabel.for = 'setup';
+  const setupInput = document.createElement('input');
+  setupInput.className = 'input';
+  setupInput.type = 'text';
+  setupInput.name='setup';
+    // setupInput.setAttribute('id', 'add-joke-setup');
+ 
+  const deliveryLabel = document.createElement('label');
+  deliveryLabel.innerText = 'Delivery ';
+  // deliveryLabel.for = 'delivery';
 
+  const deliveryInput = document.createElement('input');
+  deliveryInput.className = 'input';
+  deliveryInput.type = 'text';
+  deliveryInput.name='delivery'; 
+ // deliveryInput.setAttribute('id', 'add-joke-delivery');
 
-//   const setupInput = document.createElement('input');
-//   setupInput.className = 'input';
-//   // setupInput.setAttribute('id', 'add-joke-setup');
-//   // setupInput.type = 'text';
-//   // setupInput.name='joke-setup'; 
+const submitBtn = document.createElement('input');
+submitBtn.type = 'submit';
+submitBtn.value = 'submit';
+submitBtn.className = 'button';
 
-//   const deliveryLabel = document.createElement('label');
-//   deliveryLabel.innerText = 'Delivery ';
-//   // deliveryLabel.for = 'delivery';
+const hr = document.createElement('hr');
 
-//   const deliveryInput = document.createElement('input');
-//   deliveryInput.className = 'input';
-//   // deliveryInput.setAttribute('id', 'add-joke-delivery');
-//   // deliveryInput.type = 'text';
-//   // deliveryInput.name='joke-delivery'; 
+categoryInput.append(categoryHeading);
+  // category2, labelCategory2
 
-// const submitBtn = document.createElement('input');
-// submitBtn.type = 'submit';
-// submitBtn.value = 'submit';
-// submitBtn.className = 'button';
+  form.append(formHeading, categoryInput, setupLabel, setupInput, deliveryLabel, deliveryInput, submitBtn, hr);
 
-// const hr = document.createElement('hr');
+// deliveryLabel, deliveryInput, submitBtn, hr);
 
-// // categoryInput.append(category2, labelCategory2);
-
-//   form.append(formHeading, setupLabel, setupInput, deliveryLabel, deliveryInput, submitBtn, hr);
-
-//   formContainer.append(form);
-// }
+  formContainer.append(form);
+}
 
 // addJokeForm.addEventListener('submit', (e) => {
 //   e.preventDefault();
