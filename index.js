@@ -148,10 +148,9 @@ function renderForm() {
   category4.setAttribute('id', 'category4');
   category4.name = 'category4';
   category4.value = 'Programming';
-  
+
   // const category4Label = document.createElement('label');
   category4Label.innerText = 'Programming';
-
 
   // const setupLabel = document.createElement('label');
   setupLabel.innerText = 'Setup ';
@@ -188,18 +187,28 @@ function renderForm() {
 }
 console.log(addJokeForm);
 
+// (1) Create new form data obj
 const addJokeData = new FormData();
 
-// addJokeData.append('Setup', document.querySelector('#add-joke-setup').value);
-// addJokeData.append('', document.querySelector('#').value);
+// (2) Append value to form data obj
+// addJokeData.append('Setup', document.querySelector('#add-joke-setup'));
 
-console.log(addJokeData);
+// addJokeData.append('Pun', category1.value)
+// addJokeData.append('Dark', category2.value)
+// addJokeData.append('Misc', category3.value)
+// addJokeData.append('Programming', category4.value)
 
+// addJokeData.append('Setup', setupInput.value);
+// addJokeData.append('Delivery', deliveryInput.value);
+// console.log(addJokeData);
 
+// apend checkboxes, Setup, Delivery
 
 addJokeForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  addJokeFormHandler(e.target.addJokeForm.value)
+  addJokeFormHandler(e.target.addJokeForm) // .value
+  console.log(setupInput.value)
+  console.log(deliveryInput.value)
 });
 
 function addJokeFormHandler(e) {
@@ -210,14 +219,14 @@ function addJokeFormHandler(e) {
       Accept: "application/json"
     },
     body: JSON.stringify({
-//       "category": addJokeCategory, /// .value
-//       "setup": addJokeSetup,
-//       "delivery": addJokeDelivery,
-//       "likes": 0
+      // "category": {}, /// .value
+      // "setup": setupInput.value,
+      // "delivery": deliveryInput.value,
+      // "likes": 0
     })
   })
     .then(response => response.json())
-    .then(renderJoke(newJoke));
+    .then(renderJoke(addJokeData));
 }
 
 document.addEventListener("DOMContentLoaded", () => {
