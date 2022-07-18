@@ -191,27 +191,22 @@ console.log(addJokeForm);
 const addJokeData = new FormData();
 
 // (2) Append value to form data obj
-// addJokeData.append('Setup', document.querySelector('#add-joke-setup'));
+// NEEDS DEBUGGING
+  addJokeData.append('Pun', category1.value)
+  addJokeData.append('Dark', category2.value)
+  addJokeData.append('Misc', category3.value)
+  addJokeData.append('Programming', category4.value)
 
-// addJokeData.append('Pun', category1.value)
-// addJokeData.append('Dark', category2.value)
-// addJokeData.append('Misc', category3.value)
-// addJokeData.append('Programming', category4.value)
-
-// addJokeData.append('Setup', setupInput.value);
-// addJokeData.append('Delivery', deliveryInput.value);
-// console.log(addJokeData);
-
-// apend checkboxes, Setup, Delivery
+  addJokeData.append('Setup', setupInput.value);
+  addJokeData.append('Delivery', deliveryInput.value);
+  console.log(addJokeData);
 
 addJokeForm.addEventListener('submit', (e) => {
   e.preventDefault();
   addJokeFormHandler(e.target.addJokeForm) // .value
-  console.log(setupInput.value)
-  console.log(deliveryInput.value)
 });
 
-function addJokeFormHandler(e) {
+function addJokeFormHandler(e, addJokeData) {
   fetch(`http://localhost:3000/jokes/`, {
     method: 'POST',
     headers: {
@@ -219,10 +214,16 @@ function addJokeFormHandler(e) {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      // "category": {}, /// .value
-      // "setup": setupInput.value,
-      // "delivery": deliveryInput.value,
-      // "likes": 0
+      "category": categoryInput,
+      // {
+      // "Pun": category1,
+      // "Dark": category2,
+      // "Misc": category3,
+      // "Programming": category4
+      // }}, /// .value
+      "setup" : setupInput.value,
+      "delivery": deliveryInput.value,
+      "likes": 0
     })
   })
     .then(response => response.json())
