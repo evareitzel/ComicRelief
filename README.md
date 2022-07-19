@@ -6,7 +6,7 @@ API
 JokeAPI - https://v2.jokeapi.dev/joke/Any?safe-mode Documentation - https://sv443.net/jokeapi/v2/
 
 App Story
-Comic Relief is a one-page application containing a collection of jokes to bring levity into people's lives.
+ComicRelief is a one-page application containing a collection of jokes to bring levity into people's lives.
 
 Features
 like jokes
