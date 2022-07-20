@@ -2,6 +2,25 @@ body {
   font-family: 'Gill sans', sans-serif;
 }
 
+h1 {
+  font-weight: 900
+}
+
+.button {
+  border: 1px solid;
+  color: #292929;
+  margin-bottom: 25px;
+  padding: 8px 20px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 25px;
+  float: left;
+}
+
+hr {
+  width: 100%;
+}
+
 #hero {
   background: #eee;
   height: 100%
@@ -14,7 +33,6 @@ body {
     position: absolute;
     top: 8px;
     left: 16px;
-    /* drop-shadow: */
 }
 
 #hero-img {
@@ -24,21 +42,6 @@ body {
 #intro {
   margin-top: 25px; 
   margin-bottom: 50px;
-}
-
-h1 {
-  font-weight: 900
-}
-
-#add-joke-btn {
-  /* make smooth transition */
-}
-
-#footer {
-  background: #eee;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  text-align: center;
 }
 
 #jokes-container {
@@ -62,17 +65,6 @@ h1 {
   font-size: 32px;
 }
 
-.button {
-  border: 1px solid;
-  color: #292929;
-  margin-bottom: 25px;
-  padding: 8px 20px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 25px;
-  float: left;
-}
-
 .likes {
   float: right;
 }
@@ -91,9 +83,11 @@ h1 {
   width: 100%;
   max-width: 600px;
   margin: 0 10px 20px 0;
-  /* border: solid 1px; */
 }
 
-hr {
-  width: 100%;
+#footer {
+  background: #eee;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  text-align: center;
 }
