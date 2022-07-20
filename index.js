@@ -1,9 +1,6 @@
 const jokesContainer = document.querySelector('#jokes-container');
 const formContainer = document.querySelector('#form-container');
 
-const hr = document.createElement('hr');
-const space = document.createElement('br');
-
 const addJokeForm = document.createElement('form');
 const formHeading = document.createElement('h3');
 const categoryLabel = document.createElement('label');
@@ -36,9 +33,8 @@ function renderJoke(joke) {
 
   const setupDelivery = document.createElement('p');
   setupDelivery.innerText = joke.setup;
+  setupDelivery.className = 'setup-delivery';
   setupDelivery.addEventListener('mouseover', (e) => displayDelivery(joke, e));
-
-  const space = document.createElement('br'); // add margins in CSS
 
   const likeBtn = document.createElement('button');
   likeBtn.className = 'button';
@@ -50,7 +46,7 @@ function renderJoke(joke) {
   likes.className = 'likes';
   likes.innerText = (`${joke.likes} likes`);
 
-  card.append(category, setupDelivery, space, likeBtn, likes);
+  card.append(category, setupDelivery, likeBtn, likes);
 
   jokesContainer.append(card);
 }
@@ -99,7 +95,7 @@ function renderForm() {
   submitBtn.value = 'Add joke';
   submitBtn.className = 'button';
 
-  addJokeForm.append(formHeading, categoryLabel, categoryInput, setupLabel, setupInput, deliveryLabel, deliveryInput, submitBtn, hr);
+  addJokeForm.append(formHeading, categoryLabel, categoryInput, setupLabel, setupInput, deliveryLabel, deliveryInput, submitBtn);
 
   formContainer.append(addJokeForm);
 }
