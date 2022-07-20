@@ -17,7 +17,6 @@ const submitBtn = document.createElement('input');
 const addJokeData = new FormData();
 
 function getJokes() {
-  event.preventDefault();
   fetch('http://localhost:3000/jokes/')
     .then(response => response.json())
     .then(function (data) {
@@ -25,25 +24,6 @@ function getJokes() {
       data.forEach((joke) => {
         renderJoke(joke);
       })
-    })
-}
-
-function addLike(e, joke, likes) {
-  e.preventDefault();
-  const moreLikes = parseInt(joke.likes + 1);
-  fetch(`http://localhost:3000/jokes/${joke.id}`, {
-    method: 'PATCH',
-    headers: {
-      "Content-type": "application/json",
-      Accept: "application/json"
-    },
-    body: JSON.stringify({
-      "likes": moreLikes
-    })
-  })
-    .then(data => data.json())
-    .then(updatedJoke => {
-      likes.innerText = `${updatedJoke.likes} likes`
     })
 }
 
@@ -58,7 +38,7 @@ function renderJoke(joke) {
   setupDelivery.innerText = joke.setup;
   setupDelivery.addEventListener('mouseover', (e) => displayDelivery(joke, e));
 
-  const space = document.createElement('br');
+  const space = document.createElement('br'); // add margins in CSS
 
   const likeBtn = document.createElement('button');
   likeBtn.className = 'button';
@@ -78,6 +58,25 @@ function renderJoke(joke) {
 function displayDelivery(joke, e) {
   e.preventDefault();
   e.target.innerText === joke.setup ? e.target.innerText = joke.delivery : e.target.innerText = joke.setup;
+}
+
+function addLike(e, joke, likes) {
+  e.preventDefault();
+  const moreLikes = parseInt(joke.likes + 1);
+  fetch(`http://localhost:3000/jokes/${joke.id}`, {
+    method: 'PATCH',
+    headers: {
+      "Content-type": "application/json",
+      Accept: "application/json"
+    },
+    body: JSON.stringify({
+      "likes": moreLikes
+    })
+  })
+    .then(data => data.json())
+    .then(updatedJoke => {
+      likes.innerText = `${updatedJoke.likes} likes`
+    })
 }
 
 function renderForm() {
@@ -107,10 +106,10 @@ function renderForm() {
 
 addJokeForm.addEventListener('submit', (e) => {
   e.preventDefault();
-  addJokeFormHandler(e.target.addJokeForm)
+  addJokeFormHandler(e)
 });
 
-function addJokeFormHandler(e, addJokeData) {
+function addJokeFormHandler(e) {
   fetch(`http://localhost:3000/jokes/`, {
     method: 'POST',
     headers: {
@@ -124,11 +123,11 @@ function addJokeFormHandler(e, addJokeData) {
       "likes": 0
     })
   })
-    .then(response => response.json())
-    .then(renderJoke(addJokeData));
+    .then(promise => promise.json())
+    .then(newJoke => renderJoke(newJoke));
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   getJokes();
   renderForm();
 })

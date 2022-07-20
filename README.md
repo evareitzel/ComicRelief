@@ -9,8 +9,8 @@ App Story
 ComicRelief is a one-page application containing a collection of jokes to bring levity into people's lives.
 
 Features
-like jokes
-add a joke
+- like jokes
+- add joke
 
 User Stories
 As a user, I want to move my mouse over a card to view the joke delivery, then move my mouse again to view the joke setup.
@@ -19,12 +19,14 @@ As a user, I want to add a joke to the collection using a form.
 
 Specs: 
 1. Use an API
-2. Event listeners (3)
-- like button - click event listener
-- submit button  - submit event listener
-- onhover over card - view delivery 
-array method - 1 (forEach)
-Git Pushes - 25
+
+2. Event-listeners (3+)
+- 'mouseover' - view joke setup/delivery on cards 
+- 'click' - like button - click event listener
+- 'submit'  - form 'Add joke' button
+- 'DOMContentLoaded' - execute JavaScript functions (render joke cards, render form)
+
+3. Array iteration - forEach
 
 References:
 - API

@@ -20,6 +20,34 @@
       "delivery": "But Argon doesn't react.",
       "id": 148,
       "likes": 26
+    },
+    {
+      "category": "Joke",
+      "setup": "Hello World!",
+      "delivery": "foo",
+      "likes": 1,
+      "id": 291
+    },
+    {
+      "category": "Pun",
+      "setup": "Rabbit",
+      "delivery": "Frog",
+      "likes": 1,
+      "id": 292
+    },
+    {
+      "category": "Pun",
+      "setup": "Hi",
+      "delivery": "Bye",
+      "likes": 0,
+      "id": 293
+    },
+    {
+      "category": "Joke",
+      "setup": "Moon",
+      "delivery": "Sun",
+      "likes": 0,
+      "id": 294
     }
   ]
 }
