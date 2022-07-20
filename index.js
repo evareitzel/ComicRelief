@@ -14,6 +14,8 @@ const deliveryLabel = document.createElement('label');
 const deliveryInput = document.createElement('input');
 const submitBtn = document.createElement('input');
 
+const addJokeData = new FormData();
+
 function getJokes() {
   event.preventDefault();
   fetch('http://localhost:3000/jokes/')
@@ -26,8 +28,8 @@ function getJokes() {
     })
 }
 
-function addLike(event, joke, likes) {
-  event.preventDefault();
+function addLike(e, joke, likes) {
+  e.preventDefault();
   const moreLikes = parseInt(joke.likes + 1);
   fetch(`http://localhost:3000/jokes/${joke.id}`, {
     method: 'PATCH',
@@ -49,8 +51,8 @@ function renderJoke(joke) {
   const card = document.createElement('div');
   card.className = 'card';
 
-  const categoryTitle = document.createElement('h3');
-  categoryTitle.innerText = joke.category;
+  const category = document.createElement('h3');
+  category.innerText = joke.category;
 
   const setupDelivery = document.createElement('p');
   setupDelivery.innerText = joke.setup;
@@ -62,13 +64,13 @@ function renderJoke(joke) {
   likeBtn.className = 'button';
   likeBtn.setAttribute('id', joke.id);
   likeBtn.innerText = 'like ♡';
-  likeBtn.addEventListener('click', event => addLike(event, joke, likes));
+  likeBtn.addEventListener('click', e => addLike(e, joke, likes));
 
   const likes = document.createElement('p');
   likes.className = 'likes';
   likes.innerText = (`${joke.likes} likes`);
 
-  card.append(categoryTitle, setupDelivery, space, likeBtn, likes);
+  card.append(category, setupDelivery, space, likeBtn, likes);
 
   jokesContainer.append(card);
 }
@@ -85,18 +87,14 @@ function renderForm() {
   categoryLabel.innerText = 'Joke Type';
   categoryInput.className = 'input';
   categoryInput.type = 'text';
-  // categoryInput.setAttribute('id', 'add-joke-category');
-  // categoryInput.setAttribute('id', 'category');
 
   setupLabel.innerText = 'Setup ';
   setupInput.className = 'input';
   setupInput.type = 'text';
-  // setupInput.setAttribute('id', 'add-joke-setup');
 
   deliveryLabel.innerText = 'Delivery ';
   deliveryInput.className = 'input';
   deliveryInput.type = 'text';
-  // deliveryInput.setAttribute('id', 'add-joke-delivery');
 
   submitBtn.type = 'submit';
   submitBtn.value = 'Add joke';
@@ -106,12 +104,6 @@ function renderForm() {
 
   formContainer.append(addJokeForm);
 }
-console.log(addJokeForm);
-
-const addJokeData = new FormData();
-  // addJokeData.append('Setup', setupInput.value);
-  // addJokeData.append('Delivery', deliveryInput.value);
-  // console.log(addJokeData);
 
 addJokeForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -127,7 +119,7 @@ function addJokeFormHandler(e, addJokeData) {
     },
     body: JSON.stringify({
       "category": categoryInput.value,
-      "setup" : setupInput.value,
+      "setup": setupInput.value,
       "delivery": deliveryInput.value,
       "likes": 0
     })
