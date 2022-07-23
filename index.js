@@ -1,20 +1,3 @@
-// GitHub branch form-development
-
-const jokesContainer = document.querySelector('#jokes-container');
-const formContainer = document.querySelector('#form-container');
-
-const addJokeForm = document.createElement('form');
-const formHeading = document.createElement('h3');
-const categoryLabel = document.createElement('label');
-const categoryInput = document.createElement('input');
-const setupLabel = document.createElement('label');
-const setupInput = document.createElement('input');
-const deliveryLabel = document.createElement('label');
-const deliveryInput = document.createElement('input');
-const submitBtn = document.createElement('input');
-
-const addJokeData = new FormData();
-
 function getJokes() {
   fetch('http://localhost:3000/jokes/')
     .then(response => response.json())
@@ -50,7 +33,7 @@ function renderJoke(joke) {
 
   card.append(category, setupDelivery, likeBtn, likes);
 
-  jokesContainer.append(card);
+  document.querySelector('#jokes-container').append(card);
 }
 
 function displayDelivery(joke, e) {
@@ -77,37 +60,16 @@ function addLike(e, joke, likes) {
     })
 }
 
-function renderForm() {
-  addJokeForm.setAttribute('id', 'add-joke-form');
-  formHeading.innerText = 'Would you like to contribute a joke?';
-
-  categoryLabel.innerText = 'Joke Type';
-  categoryInput.className = 'input';
-  categoryInput.type = 'text';
-
-  setupLabel.innerText = 'Setup ';
-  setupInput.className = 'input';
-  setupInput.type = 'text';
-
-  deliveryLabel.innerText = 'Delivery ';
-  deliveryInput.className = 'input';
-  deliveryInput.type = 'text';
-
-  submitBtn.type = 'submit';
-  submitBtn.value = 'Add joke';
-  submitBtn.className = 'button';
-
-  addJokeForm.append(formHeading, categoryLabel, categoryInput, setupLabel, setupInput, deliveryLabel, deliveryInput, submitBtn);
-
-  formContainer.append(addJokeForm);
+function activateForm() {
+  let form = document.querySelector('form')
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleAddJoke(e.target.setup_input.value, e.target.delivery_input.value)
+    form.reset();
+  })
 }
 
-addJokeForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  addJokeFormHandler(e)
-});
-
-function addJokeFormHandler(e) {
+function handleAddJoke(e) {
   fetch(`http://localhost:3000/jokes/`, {
     method: 'POST',
     headers: {
@@ -115,9 +77,9 @@ function addJokeFormHandler(e) {
       Accept: "application/json"
     },
     body: JSON.stringify({
-      "category": categoryInput.value,
-      "setup": setupInput.value,
-      "delivery": deliveryInput.value,
+      "category": 'Joke',
+      "setup": setup_input.value,
+      "delivery": delivery_input.value,
       "likes": 0
     })
   })
@@ -127,5 +89,5 @@ function addJokeFormHandler(e) {
 
 document.addEventListener('DOMContentLoaded', () => {
   getJokes();
-  renderForm();
+  activateForm();
 })

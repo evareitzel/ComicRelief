@@ -4,50 +4,29 @@
       "category": "Pun",
       "setup": "Why does the size of the snack not matter to a giraffe?",
       "delivery": "Because even a little bit goes a long way.",
-      "id": 290,
+      "id": 1,
       "likes": 19
     },
     {
       "category": "Programming",
       "setup": "Why did the Python data scientist get arrested at customs?",
       "delivery": "She was caught trying to import pandas!",
-      "id": 234,
+      "id": 2,
       "likes": 3
     },
     {
       "category": "Pun",
       "setup": "The gas Argon walks into a bar.\nThe barkeeper says \"What would you like to drink?\"",
       "delivery": "But Argon doesn't react.",
-      "id": 148,
-      "likes": 26
+      "id": 3,
+      "likes": 28
     },
     {
       "category": "Joke",
-      "setup": "Hello World!",
-      "delivery": "foo",
+      "setup": "If you want to dance",
+      "delivery": "Just ask",
       "likes": 1,
-      "id": 291
-    },
-    {
-      "category": "Pun",
-      "setup": "Rabbit",
-      "delivery": "Frog",
-      "likes": 1,
-      "id": 292
-    },
-    {
-      "category": "Pun",
-      "setup": "Hi",
-      "delivery": "Bye",
-      "likes": 0,
-      "id": 293
-    },
-    {
-      "category": "Joke",
-      "setup": "Moon",
-      "delivery": "Sun",
-      "likes": 0,
-      "id": 294
+      "id": 4
     }
   ]
 }
