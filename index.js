@@ -77,8 +77,8 @@ function addJoke(setupStr, deliveryStr){
       "likes": 0
     })
   })
-    .then(resp => resp.json())
-    .then(newJoke => renderJoke(newJoke))
+  .then(resp => resp.json())
+  .then(newJoke => renderJoke(newJoke))
 }
 
 function updateLikes(e, joke, likes) {
@@ -94,8 +94,8 @@ function updateLikes(e, joke, likes) {
       "likes": moreLikes
     })
   })
-    .then(data => data.json())
-    .then(updatedJoke => {
-      likes.innerText = `${updatedJoke.likes} likes`
-    })
+  .then(data => data.json())
+  .then(updatedJoke => {
+    likes.innerText = `${updatedJoke.likes} likes`
+  })
 }
