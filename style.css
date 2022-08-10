@@ -1,9 +1,34 @@
 body {
   font-family: 'Gill sans', sans-serif;
+  /* max-width: 480px; */
+  text-align: center;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+#hero {
+  background: #eee;
+  height: 100%;
+  color: white;
+  /* text-align: center; */
   max-width: 480px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+
+}
+
+.hero-text {
+    position: absolute;
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+}
+
+#hero-img {
+  width:100%;
+  display: block;
+  margin-top: -10px;
 }
 
 h1 {
@@ -33,54 +58,72 @@ hr {
   margin-top: 50px;
 }
 
-#hero {
-  background: #eee;
-  height: 100%;
-  color: white;
-  text-align: center;
-}
-
-.hero-text {
-    position: absolute;
-    left: 35%;
-}
-
-#hero-img {
-  width:100%;
-}
-
 #intro {
   margin-top: 25px; 
   margin-bottom: 50px;
+  max-width: 480px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 #jokes-container {
   align-content: center;
+  max-width: 480px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 .card {
   background: #eeeeee;
   display: inline-block; 
-  padding: 10px 20px 20px;
+  padding: 20px;
   margin: 20px 10px 10px 10px;
   background-color: #ffffff;
   min-height: 300px;
   width: 250px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2)
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.setup-delivery-container {
+  height: 100px;
 }
 
 .setup-delivery {
   margin-bottom: 20px;
 }
 
+.likes-container {
+  display: block;
+  padding-top: 50px;
+  /* margin-bottom:  */
+}
+
+.likes-container>button {
+  display: inline-block;
+  /* text-align: right; */
+  float: left;
+}
+
 .likes {
+  display: inline-block;
+  /* text-align: right; */
   float: right;
+  padding-top: 20px;
 }
 
 #form-container {
-  margin: 25px 0 50px 0; 
-  padding: 25px 10px 25px 0;
+  /* margin: 25px 0 50px 0;  */
+  padding: 25px 10px 25px 10px;
+  max-width: 480px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
 #add-joke-form {
@@ -99,7 +142,10 @@ hr {
 
 #footer {
   background: #eee;
-  padding-top: 20px;
-  padding-bottom: 50px;
-  text-align: center;
+  padding: 20px 0 50px 0;
+  /* text-align: center; */
+  /* position: absolute;
+  margin-left: 0;
+  margin-right: 50%;
+  width: 2000px; */
 }

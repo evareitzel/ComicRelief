@@ -5,14 +5,14 @@
       "setup": "Why does the size of the snack not matter to a giraffe?",
       "delivery": "Because even a little bit goes a long way.",
       "id": 1,
-      "likes": 19
+      "likes": 26
     },
     {
       "category": "Programming",
       "setup": "Why did the Python data scientist get arrested at customs?",
       "delivery": "She was caught trying to import pandas!",
       "id": 2,
-      "likes": 3
+      "likes": 4
     },
     {
       "category": "Pun",
@@ -23,10 +23,17 @@
     },
     {
       "category": "Joke",
+      "setup": "Did you hear about the claustrophobic astronaut?",
+      "delivery": "She just needed a little space.",
+      "likes": 2,
+      "id": 4
+    },
+    {
+      "category": "Joke",
       "setup": "If you want to dance",
       "delivery": "Just ask",
-      "likes": 1,
-      "id": 4
+      "likes": 6,
+      "id": 5
     }
   ]
 }

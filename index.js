@@ -1,12 +1,12 @@
 function getJokes() {
   fetch('http://localhost:3000/jokes/')
-    .then(response => response.json())
-    .then(function (data) {
-      jokeArray = data;
-      data.forEach((joke) => {
-        renderJoke(joke);
-      })
+  .then(response => response.json())
+  .then(function (data) {
+    jokeArray = data;
+    data.forEach((joke) => {
+      renderJoke(joke);
     })
+  })
 }
 
 function renderJoke(joke) {
@@ -16,10 +16,16 @@ function renderJoke(joke) {
   const category = document.createElement('h3');
   category.innerText = joke.category;
 
+  const setupDeliveryContainer = document.createElement('div');
+  setupDeliveryContainer.className = 'setup-delivery-container';
+
   const setupDelivery = document.createElement('p');
   setupDelivery.innerText = joke.setup;
   setupDelivery.className = 'setup-delivery';
   setupDelivery.addEventListener('mouseover', (e) => displayDelivery(joke, e));
+
+  const likesContainer = document.createElement('div');
+  likesContainer.className = 'likes-container';
 
   const likeBtn = document.createElement('button');
   likeBtn.className = 'button';
@@ -31,7 +37,11 @@ function renderJoke(joke) {
   likes.className = 'likes';
   likes.innerText = (`${joke.likes} likes`);
 
-  card.append(category, setupDelivery, likeBtn, likes);
+  setupDeliveryContainer.append(setupDelivery)
+
+  likesContainer.append(likeBtn, likes)
+
+  card.append(category, setupDeliveryContainer, likesContainer);
 
   document.querySelector('#jokes-container').append(card);
 }
@@ -69,7 +79,7 @@ function activateForm() {
   })
 }
 
-function handleAddJoke(e) {
+function handleAddJoke(setupStr, deliveryStr) {
   fetch(`http://localhost:3000/jokes/`, {
     method: 'POST',
     headers: {
@@ -78,8 +88,8 @@ function handleAddJoke(e) {
     },
     body: JSON.stringify({
       "category": 'Joke',
-      "setup": setup_input.value,
-      "delivery": delivery_input.value,
+      "setup": setupStr,
+      "delivery": deliveryStr,
       "likes": 0
     })
   })
