@@ -2,6 +2,15 @@ All about my Single Page Application!
 
 Phase 1 Project
 
+How to start app
+$ json-server --watch db.json
+
+Resources
+http://localhost:3000/jokes
+
+Home
+https://localhost:3000
+
 API
 JokeAPI - https://v2.jokeapi.dev/joke/Any?safe-mode Documentation - https://sv443.net/jokeapi/v2/
 

@@ -1,8 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   getJokes()
+  document.querySelector('form').addEventListener('submit', handleSubmit)
 })
-
-document.querySelector('form').addEventListener('submit', handleSubmit)
 
 function handleDisplayDelivery(joke, e){
   e.preventDefault()
@@ -28,7 +27,7 @@ function renderJoke(joke){
   const setupDelivery = document.createElement('p')
   setupDelivery.innerText = joke.setup
   setupDelivery.className = 'setup-delivery'
-  setupDelivery.addEventListener('mouseover', (e) => handleDisplayDelivery(joke, e))
+  setupDelivery.addEventListener('mouseover', e => handleDisplayDelivery(joke, e))
 
   const likesContainer = document.createElement('div')
   likesContainer.className = 'likes-container'
@@ -55,7 +54,8 @@ function renderJoke(joke){
 function getJokes(){
   fetch('http://localhost:3000/jokes/')
   .then(response => response.json())
-  .then(function (data) {
+  .then(data => {
+    debugger
     jokeArray = data
     data.forEach((joke) => {
       renderJoke(joke)
@@ -94,7 +94,7 @@ function updateLikes(e, joke, likes) {
       "likes": moreLikes
     })
   })
-  .then(data => data.json())
+  .then(resp => resp.json())
   .then(updatedJoke => {
     likes.innerText = `${updatedJoke.likes} likes`
   })
