@@ -1,6 +1,6 @@
 All about my Single Page Application!
 
-Phase 1 Project
+Phase 1 Project for Flatiron School
 
 How to start app
 $ json-server --watch db.json
